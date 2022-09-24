@@ -64,209 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Node.js安装与配置（详细步骤）" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/" class="article-date">
-  <time datetime="2022-09-24T13:52:45.000Z" itemprop="datePublished">2022-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/">Node.js安装与配置（详细步骤）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Node-js安装与配置（详细步骤）"><a href="#Node-js安装与配置（详细步骤）" class="headerlink" title="Node.js安装与配置（详细步骤）"></a>Node.js安装与配置（详细步骤）</h1><p>[TOC]</p>
-<h2 id="一、安装Node-js"><a href="#一、安装Node-js" class="headerlink" title="一、安装Node.js"></a>一、安装Node.js</h2><h3 id="1-下载"><a href="#1-下载" class="headerlink" title="1.下载"></a>1.下载</h3><p><a target="_blank" rel="noopener" href="http://nodejs.cn/download/">Node.js官网下载</a><br>根据自身系统下载对应的安装包（我这里为Windows11 64位，故选择下载第一个安装包）</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/914dfb1bae004d71bab1d7cc2c01a671.png" alt="在这里插入图片描述"></p>
-<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h3><p>双击安装包，点击Next，勾选使用许可协议，点击Next，选择安装位置（可根据个人情况更换路径，我这里选择安装在E:\devTools\nodejs）</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/493dfc78735841f395c4a116898f5c6f.png" alt="在这里插入图片描述"></p>
-<p>继续点击Next，点击Next，点击Install，点击Finish完成安装。</p>
-<h3 id="3-添加环境变量"><a href="#3-添加环境变量" class="headerlink" title="3.添加环境变量"></a>3.添加环境变量</h3><h4 id="3-1-进入环境变量，编辑【系统变量】下的变量【Path】"><a href="#3-1-进入环境变量，编辑【系统变量】下的变量【Path】" class="headerlink" title="3.1 进入环境变量，编辑【系统变量】下的变量【Path】"></a>3.1 进入环境变量，编辑【系统变量】下的变量【Path】</h4><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d128a4fe1ce34016b08a2842cde77166.png" alt="选择Path变量"></p>
-<h4 id="3-2-添加Node-js的安装路径（此处为E-devTools-nodejs-）"><a href="#3-2-添加Node-js的安装路径（此处为E-devTools-nodejs-）" class="headerlink" title="3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）"></a>3.2 添加Node.js的安装路径（此处为E:\devTools\nodejs\）</h4><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/4609bccc18d8419ea764fb0153454ca9.png" alt="写入Node.js安装路径"></p>
-<h2 id="二、验证是否安装成功"><a href="#二、验证是否安装成功" class="headerlink" title="二、验证是否安装成功"></a>二、验证是否安装成功</h2><p>进入cmd命令行窗口，输入node -v查看nodejs版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
-
-<p>输入npm -v查看npm版本</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-
-<p>如下图所示，即为安装成功：</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ff513962ea164d019d3a9d542d26f0ba.png" alt="验证是否安装成功"></p>
-<h2 id="三、修改模块下载位置"><a href="#三、修改模块下载位置" class="headerlink" title="三、修改模块下载位置"></a>三、修改模块下载位置</h2><p><span style="color:yellow;background:red"><strong>此步骤修改以后npm全局下载模块的保存位置，可根据自身情况选择是否更改。</strong></span></p>
-<h3 id="1-查看npm默认存放位置"><a href="#1-查看npm默认存放位置" class="headerlink" title="1.查看npm默认存放位置"></a>1.查看npm默认存放位置</h3><p>使用npm get prefix查看npm全局模块的存放路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get prefix</span><br></pre></td></tr></table></figure>
-
-
-<p>使用npm get cache查看npm缓存默认存放路径</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get cache</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e21684575b404a7f87f83572f8df3d4c.png" alt="在这里插入图片描述"></p>
-<p>如上图所示，npm 全局模块存放位置以及cache的存放位置，默认是在 C 盘 “C:\Users\用户\AppData” 下。</p>
-<h3 id="2-在-nodejs-安装目录下，创建-“node-global”-和-“node-cache”-两个文件夹"><a href="#2-在-nodejs-安装目录下，创建-“node-global”-和-“node-cache”-两个文件夹" class="headerlink" title="2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹"></a>2.在 nodejs 安装目录下，创建 “node_global” 和 “node_cache” 两个文件夹</h3><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e9847471a84c45ddb1fc416a223cdb55.png" alt="在这里插入图片描述"></p>
-<h3 id="3-修改默认文件夹"><a href="#3-修改默认文件夹" class="headerlink" title="3.修改默认文件夹"></a>3.修改默认文件夹</h3><p>设置全局模块的安装路径到 “node_global” 文件夹，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set prefix &quot;E:\devTools\nodejs\node_global&quot;</span><br></pre></td></tr></table></figure>
-
-<p>设置缓存到 “node_cache” 文件夹</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set cache &quot;E:\devTools\nodejs\node_cache&quot;</span><br></pre></td></tr></table></figure>
-
-
-<p>如下图所示：</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/6e67a30770ff40c49f640007f96703d1.png" alt="在这里插入图片描述"></p>
-<p><span style ="color:red"><strong>注意：</strong></span>由于 node 全局模块大多数都是可以通过命令行访问的，还要把【node_global】的路径“E:\devTools\nodejs\node_global”加入到【系统变量 】下的【PATH】 变量中，方便直接使用命令行运行，如下图所示：</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/bb96741ac93447aba9e65f0a184e3d11.png" alt="在这里插入图片描述"></p>
-<h3 id="4-测试默认位置是否更改成功"><a href="#4-测试默认位置是否更改成功" class="headerlink" title="4.测试默认位置是否更改成功"></a>4.测试默认位置是否更改成功</h3><p>经过上面的步骤，nodejs下载的模块就会自动下载到我们自定义的目录，接下来我们测试一下是否更改成功。输入下面的命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br></pre></td></tr></table></figure>
-
-<p>或者</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --global</span><br></pre></td></tr></table></figure>
-
-<p><span style="color:red"><strong>注意：</strong></span>“-g”等同于“–global”，“-g” 是全局安装，不加“-g”就是默认下载到当前目录。“-g” 表示安装到之前设置的【node_global】目录下，同时nodejs会自动地在node_global文件夹下创建【node_modules】子文件夹， 即自动下载到“E:\devTools\nodejs\node_global\node_modules” 路径下。</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e05642e304a443ec85794f2ac3bad6a8.png" alt="在这里插入图片描述">如上图所示，下载express模块成功，然后在文件管理器中查看是否保存到上面自定义的路径下。</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d460d0cd30884a83bb175a6e6127aeca.png" alt="在这里插入图片描述">可以看到，express模块已经成功地下载到【E:\devTools\nodejs\node_global\node_modules】下。</p>
-<p><span style="color:red"><strong>注意：</strong></span>若执行命令npm install express -g出现如下报错：</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/6caaa64529e0401aa2d467a8a5ceec22.png" alt="在这里插入图片描述"></p>
-<p>是由于对文件夹操作的权限不够，右击Nodejs文件夹-&gt;属性-&gt;安全，点击编辑，将所有权限都✔即可。</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d1a6f84379d3443bad6af4c734e169d7.png" alt="在这里插入图片描述"></p>
-<p>※执行npm install express -g仍然出错的话继续将nodejs下【node_cache】、【node_global】、【node_modules】这三个文件夹的所有权限勾选，再次执行：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express -g</span><br><span class="line">即可下载成功。</span><br></pre></td></tr></table></figure>
-
-<h2 id="四、设置淘宝镜像"><a href="#四、设置淘宝镜像" class="headerlink" title="四、设置淘宝镜像"></a>四、设置淘宝镜像</h2><h3 id="1-将npm默认的registry修改为淘宝registry"><a href="#1-将npm默认的registry修改为淘宝registry" class="headerlink" title="1.将npm默认的registry修改为淘宝registry"></a>1.将npm默认的registry修改为淘宝registry</h3><p>说明：npm 默认的 registry ,也就是下载 npm 包时会从国外的服务器下载，国内下载会很慢，一般更换为淘宝镜像：<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org./">https://registry.npm.taobao.org。</a></p>
-<h4 id="1-1-查看当前使用的镜像路径"><a href="#1-1-查看当前使用的镜像路径" class="headerlink" title="1.1 查看当前使用的镜像路径"></a>1.1 查看当前使用的镜像路径</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/ef81e85548b74e06bc325a27a9914258.png" alt="在这里插入图片描述"></p>
-<h4 id="1-2-更换npm为淘宝镜像"><a href="#1-2-更换npm为淘宝镜像" class="headerlink" title="1.2 更换npm为淘宝镜像"></a>1.2 更换npm为淘宝镜像</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org/</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-3-检查镜像是否配置成功"><a href="#1-3-检查镜像是否配置成功" class="headerlink" title="1.3 检查镜像是否配置成功"></a>1.3 检查镜像是否配置成功</h4><p>再次执行npm config get registry，检查当前的镜像路径：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config get registry</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/5e6a5bd3b935462fb2521db2d9ea2577.png" alt="在这里插入图片描述"></p>
-<p>如上图所示，npm默认的registry已修改为淘宝registry。</p>
-<h3 id="2-全局安装基于淘宝源的cnpm"><a href="#2-全局安装基于淘宝源的cnpm" class="headerlink" title="2.全局安装基于淘宝源的cnpm"></a>2.全局安装基于淘宝源的cnpm</h3><p>说明：由于npm的服务器在海外，所以访问速度比较慢，访问不稳定 ，cnpm的服务器是由淘宝团队提供，服务器在国内，cnpm是npm镜像，一般会同步更新，相差在10分钟，所以cnpm在安装一些软件时候会比较有优势。但是cnpm一般只用于模块安装，在项目创建与卸载等相关操作时仍使用npm。</p>
-<h4 id="2-1-全局安装基于淘宝源的cnpm"><a href="#2-1-全局安装基于淘宝源的cnpm" class="headerlink" title="2.1 全局安装基于淘宝源的cnpm"></a>2.1 全局安装基于淘宝源的cnpm</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/b1247b4bd75d4e128914eba35e2ed91f.png" alt="在这里插入图片描述"></p>
-<h4 id="2-2-本地查看cnpm模块"><a href="#2-2-本地查看cnpm模块" class="headerlink" title="2.2 本地查看cnpm模块"></a>2.2 本地查看cnpm模块</h4><p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d9dddf1705e84f5990b2062db823cde4.png" alt="在这里插入图片描述"></p>
-<h4 id="2-3-执行命令查看cnpm是否安装成功"><a href="#2-3-执行命令查看cnpm是否安装成功" class="headerlink" title="2.3 执行命令查看cnpm是否安装成功"></a>2.3 执行命令查看cnpm是否安装成功</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
-
-<p>如下图所示，即代表cnpm配置成功。</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/a73fe1fb625b45ef9a04765a1e46fbae.png" alt="在这里插入图片描述"></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/" data-id="cl8fz59l30000v8ub39h97b1z" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hexo+github搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/09/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2022-09-24T13:52:45.000Z" itemprop="datePublished">2022-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/09/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo+github搭建博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="hexo-github搭建博客"><a href="#hexo-github搭建博客" class="headerlink" title="hexo+github搭建博客"></a>hexo+github搭建博客</h1><p>[TOC]</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="1、安装nodejs"><a href="#1、安装nodejs" class="headerlink" title="1、安装nodejs"></a>1、安装nodejs</h3><p>直接到官网上下载安装即可<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
-<ul>
-<li><a target="_blank" rel="noopener" href="http://nodejs.org/">Node.js</a> (Node.js 版本需不低于 10.13，建议使用 Node.js 12.0 及以上版本)</li>
-<li>Node自带npm</li>
-</ul>
-<p>详细安装配置</p>
-<h4 id="nodejs配置"><a href="#nodejs配置" class="headerlink" title="nodejs配置"></a>nodejs配置</h4><h3 id="2、安装git"><a href="#2、安装git" class="headerlink" title="2、安装git"></a>2、安装git</h3><p>Windows：下载并安装 git.<br>Mac：使用 Homebrew, MacPorts 或者下载 安装程序。<br>Linux (Ubuntu, Debian)：sudo apt-get install git-core<br>Linux (Fedora, Red Hat, CentOS)：sudo yum install git-core</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/343d28b9c9178b0b857abee140a668b1.png" alt="img"></p>
-<p>npm下载慢的话也可以下载淘宝下载源cnpm</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/e21b605afbc75a0e08824e062dae3ea4.png" alt="img"></p>
-<h2 id="开始安装Hexo"><a href="#开始安装Hexo" class="headerlink" title="开始安装Hexo"></a>开始安装Hexo</h2><h3 id="1-安装hexo"><a href="#1-安装hexo" class="headerlink" title="1.安装hexo"></a>1.安装hexo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">或者</span><br><span class="line">cnpm install -g hexo-cli</span><br><span class="line">123</span><br></pre></td></tr></table></figure>
-
-<p>安装完成可输入hexo -v查看版本</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/bba538484708b3e30f14af8557501c3c.png" alt="image-20211203164700035"></p>
-<h3 id="2、初始化hexo，新建存储博客的文件夹"><a href="#2、初始化hexo，新建存储博客的文件夹" class="headerlink" title="2、初始化hexo，新建存储博客的文件夹"></a>2、初始化hexo，新建存储博客的文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog（本地文件夹名称：可自定义）</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d01a6881209137448e5385dd3534097d.png" alt="image-20211203165005655"></p>
-<h3 id="3、进入文件夹，安装一下npm"><a href="#3、进入文件夹，安装一下npm" class="headerlink" title="3、进入文件夹，安装一下npm"></a>3、进入文件夹，安装一下npm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
-<p>可以看到我们的hexo站点就已经安装好了，接下来就可以直接启动他了</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/bcf516435e0c18ccdd4bb12f2fe04e2a.png" alt="iShot2021-12-03 16.55.54"></p>
-<h3 id="4、启动服务站点"><a href="#4、启动服务站点" class="headerlink" title="4、启动服务站点"></a>4、启动服务站点</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g </span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/af32bf9e9c204c69d873df7c3437c3a4.png" alt="image-20211203165829687"></p>
-<p>访问<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 至此hero就搭建好了。可以在本地访问了</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/3a611caeb2993779a773aaad9864d493.png" alt="20211203170208"></p>
-<h2 id="将hexo博客站点上传到github上"><a href="#将hexo博客站点上传到github上" class="headerlink" title="将hexo博客站点上传到github上"></a>将hexo博客站点上传到github上</h2><h3 id="1、新建guthub仓库"><a href="#1、新建guthub仓库" class="headerlink" title="1、新建guthub仓库"></a>1、新建guthub仓库</h3><p>仓库名称限制了为你的：用户名+.github.io</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/d2560d7f2d59f5f9b587a34cd2819307.png" alt="image-20211203213307819"></p>
-<h3 id="2、安装hexo上传插件"><a href="#2、安装hexo上传插件" class="headerlink" title="2、安装hexo上传插件"></a>2、安装hexo上传插件</h3><p>这里需要安装一个hexo的上传插件deploy-git</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/49d71ebd13729dd4acb6f52cb5b07b70.png" alt="image-20211203171157254"></p>
-<h3 id="3、修改hexo配置文件指定仓库路径"><a href="#3、修改hexo配置文件指定仓库路径" class="headerlink" title="3、修改hexo配置文件指定仓库路径"></a>3、修改hexo配置文件指定仓库路径</h3><p>可在文件夹中直接打开文件，也可通过vim直接编辑</p>
-<p><img src="https://imagebed-1306275532.cos.ap-shanghai.myqcloud.com/img/57b7452a5399f57b0e3ef2ef1a5d8271.png" alt="image-20211203213606004"></p>
-<h3 id="4、推送站点到github"><a href="#4、推送站点到github" class="headerlink" title="4、推送站点到github"></a>4、推送站点到github</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">推送命令</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>推送过程中需要输入你的github用户名和密码。但是在2021年8月14日开始github官方就加强安全访问。不能通过原有账号密码git访问，密码需要用官方的token或者采用ssh公私钥访问。否则会出现下图：鉴权失败（用户名密码错误）</p>
-<h2 id="hexo文件夹详解："><a href="#hexo文件夹详解：" class="headerlink" title="hexo文件夹详解："></a>hexo文件夹详解：</h2><ul>
-<li>node_modules：是依赖包</li>
-<li> public：存放的是生成的页面</li>
-<li> scaffolds：命令生成文章等的模板</li>
-<li> source：用命令创建的各种文章</li>
-<li> themes：主题</li>
-<li> _config.yml：整个博客的配置</li>
-<li> db.json：source解析所得到的</li>
-<li> package.json：项目所需模块项目的配置信息</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" data-id="cl8fz59l60001v8ub6bz1fvlm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2022/09/24/hello-world/" class="article-date">
@@ -306,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/24/hello-world/" data-id="cl8fwy61k0000noubgmpzajjy" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/09/24/hello-world/" data-id="cl8g0vu110001kgub6kgxbj3n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -326,23 +123,9 @@
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AE%89%E8%A3%85/" rel="tag">安装</a></li></ul>
-    </div>
-  </div>
-
 
   
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/%E5%AE%89%E8%A3%85/" style="font-size: 10px;">安装</a>
-    </div>
-  </div>
-
   
     
   <div class="widget-wrap">
@@ -359,14 +142,6 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
-        
-          <li>
-            <a href="/2022/09/24/Node.js%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE%EF%BC%88%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%EF%BC%89/">Node.js安装与配置（详细步骤）</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">hexo+github搭建博客</a>
-          </li>
         
           <li>
             <a href="/2022/09/24/hello-world/">Hello World</a>
